@@ -1,0 +1,407 @@
+'Code by Derek Nobbe
+'Completed 12/19/2017
+'Feel free to call with questions at (812)-363-4225
+
+
+
+Sub sortProjectsAlsip()
+
+'Selecting Correct Page
+Worksheets("Alsip - Future").Select
+'Each priority box is stored in memory as a string.
+'The loops iterate through the project data and if the logic fits the box, updates the string with
+'the box that contained the right logic. After the loop, it pastes the string into the correct logic box.
+Dim HighHigh As String
+Dim HighMed As String
+Dim HighLow As String
+Dim MedHigh As String
+Dim MedMed As String
+Dim MedLow As String
+Dim LowHigh As String
+Dim LowLow As String
+
+'HIGH HIGH
+Dim counter As Integer
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) > 3 Then
+HighHigh = HighHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E63").Value = HighHigh
+
+
+'HIGH MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) = 3 Then
+HighMed = HighMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("G63").Value = HighMed
+
+
+'HIGH LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) < 3 Then
+HighLow = HighLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("J63").Value = HighLow
+
+'MED HIGH
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) > 3 Then
+MedHigh = MedHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E64").Value = MedHigh
+
+'MED MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) = 3 Then
+MedMed = MedMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("G64").Value = MedMed
+
+'MED LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) < 3 Then
+MedLow = MedLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("J64").Value = MedLow
+
+'LOW HIGH
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) > 3 Then
+LowHigh = LowHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E65").Value = LowHigh
+
+'LOW MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) = 3 Then
+LowMed = LowMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("G65").Value = LowMed
+
+'LOW LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) < 3 Then
+LowLow = LowLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct cell.
+
+Wend
+
+Range("J65").Value = LowLow
+
+
+With Range("E63")
+.WrapText = True
+End With
+
+With Range("G63")
+.WrapText = True
+End With
+
+With Range("J63")
+.WrapText = True
+End With
+
+With Range("E64")
+.WrapText = True
+End With
+
+With Range("G64")
+.WrapText = True
+End With
+
+With Range("J64")
+.WrapText = True
+End With
+
+With Range("E65")
+.WrapText = True
+End With
+
+With Range("G65")
+.WrapText = True
+End With
+
+With Range("J65")
+.WrapText = True
+End With
+
+End Sub
+
+Sub sortProjectsCH()
+
+'Selecting Active Page
+Worksheets("CH - Future").Select
+'Each priority box is stored in memory as a string.
+'The loops iterate through the project data and if the logic fits the box, updates the string with
+'the box that contained the right logic. After the loop, it pastes the string into the correct logic box.
+Dim HighHigh As String
+Dim HighMed As String
+Dim HighLow As String
+Dim MedHigh As String
+Dim MedMed As String
+Dim MedLow As String
+Dim LowHigh As String
+Dim LowLow As String
+
+'HIGH HIGH
+Dim counter As Integer
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) > 3 Then
+HighHigh = HighHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("D89").Value = HighHigh
+
+
+'HIGH MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) = 3 Then
+HighMed = HighMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E89").Value = HighMed
+
+
+'HIGH LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) > 3 And Cells(counter, 10) < 3 Then
+HighLow = HighLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("G89").Value = HighLow
+
+'MED HIGH
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) > 3 Then
+MedHigh = MedHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("D90").Value = MedHigh
+
+'MED MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) = 3 Then
+MedMed = MedMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E90").Value = MedMed
+
+'MED LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) = 3 And Cells(counter, 10) < 3 Then
+MedLow = MedLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("G90").Value = MedLow
+
+'LOW HIGH
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) > 3 Then
+LowHigh = LowHigh & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("D91").Value = LowHigh
+
+'LOW MED
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) = 3 Then
+LowMed = LowMed & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct sheet.
+'Sheets(PriorityChart).Select
+
+Wend
+
+Range("E91").Value = LowMed
+
+'LOW LOW
+
+counter = 2
+While Cells(counter, 3).Value <> ""
+If Cells(counter, 9) < 3 And Cells(counter, 10) < 3 Then
+LowLow = LowLow & Cells(counter, 3) & ",   "
+End If
+counter = counter + 1
+'At this point, the string for the correct logic box is already stored in memory, it's just a matter of pasting it
+'to the correct cell.
+
+Wend
+
+Range("G91").Value = LowLow
+
+
+With Range("D89")
+.WrapText = True
+End With
+
+With Range("E89")
+.WrapText = True
+End With
+
+With Range("G89")
+.WrapText = True
+End With
+
+With Range("D89")
+.WrapText = True
+End With
+
+With Range("E90")
+.WrapText = True
+End With
+
+With Range("G90")
+.WrapText = True
+End With
+
+With Range("D91")
+.WrapText = True
+End With
+
+With Range("E91")
+.WrapText = True
+End With
+
+With Range("G91")
+.WrapText = True
+End With
+
+End Sub
